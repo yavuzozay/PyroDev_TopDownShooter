@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] private int maxHP;
     [SerializeField] private int speed = 5;
+   // [SerializeField]private float yAngle=50f;
 
 
     [HideInInspector] public Vector3 Pos;
@@ -44,6 +45,8 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        
+     //   transform.Rotate(0, yAngle*Time.fixedDeltaTime, 0,Space.Self);
         mRB.position = Vector3.MoveTowards(mRB.position, aimPos, Time.fixedDeltaTime * speed);
         Pos = mRB.position;
 
